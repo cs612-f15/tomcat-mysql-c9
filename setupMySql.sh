@@ -6,9 +6,9 @@ cwd=$(pwd)
 
 mysql-ctl start
 
-wget https://pacedps.blob.core.windows.net/cs612-f2015/books.sql
+wget https://pacedps.blob.core.windows.net/cs612-f2015/survey.sql
 
-mysql < $cwd/books.sql
+sudo mysql < $cwd/survey.sql
 
 sudo mysql < $cwd/setRootUser.sql
 
