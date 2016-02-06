@@ -5,7 +5,9 @@ cwd=$(pwd)
 #useradd -s /bin/false -g tomcat -d $cwd/tomcat/tomcat tomcat
 
 mkdir $cwd/tomcat
-wget http://mirror.cogentco.com/pub/apache/tomcat/tomcat-8/v8.0.28/bin/apache-tomcat-8.0.28.tar.gz -O tomcat.tar.gz
+
+
+wget http://archive.apache.org/dist/tomcat/tomcat-8/v8.0.28/bin/apache-tomcat-8.0.28.tar.gz -O tomcat.tar.gz
 
 tar xvf tomcat.tar.gz -C $cwd/tomcat --strip-components=1
 
