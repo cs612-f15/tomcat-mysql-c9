@@ -71,6 +71,29 @@ A helper script allows you build `*.java` source files, then build, then restart
 ./tomcat/bin/cataling.sh start
 ```
 
+# Important - Update the UserName Password
+
+Go into the `./tomcat/webapps/survey/WEB-INF/classes/survey/DatabaseAccess.java` file
+
+Edit the lines to change the user from `root` to `cs612`
+
+Should look like this:
+
+```java
+  String jdbcDriver = "com.mysql.jdbc.Driver";
+  String dbURL = "jdbc:mysql://localhost/test";
+  String user = "cs612";
+  String password = "123456";
+```
+
+Recompile, then restart Tomcat...
+
+```bash
+./buildJava.sh
+./tomcat/bin/catalina.sh stop
+./tomcat/bin/cataling.sh start
+```
+
 
 Note: JSP files if changes are immediately reprocessed and reflected within Tomcat.
 Class files, sourced from Java files, requires a "restart" of Tomcat - that is what the `./tomcat/bin/cataling stop/start` provides.
