@@ -13,7 +13,6 @@ Call it whatever you like, but choose "Custom".
 git clone https://github.com/cs612-f15/tomcat-mysql-c9.git
 
 cd tomcat-mysql-c9
-
 ```
 
 ## Setting up MySQL
