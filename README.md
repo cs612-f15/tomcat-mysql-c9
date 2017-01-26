@@ -13,7 +13,6 @@ Call it whatever you like, but choose "Custom".
 git clone https://github.com/cs612-f15/tomcat-mysql-c9.git
 
 cd tomcat-mysql-c9
-
 ```
 
 ## Setting up MySQL
@@ -32,16 +31,25 @@ Run the following from your `~/workspace/tomcat-mysql-c9` directory.
 
 ```
 ./setupTomcat.sh
-
 ```
 
 ## Building Java classes
 
-Once the Tomcat script is run, the `survey.war` file is deployed to `./tomcat/webapps` and as the Survey site is 
-requested, Tomcat extracts the WAR file.
+Once the Tomcat script is run, the `survey.war` file is deployed to `./tomcat/webapps` and as the Survey site is requested, Tomcat extracts the WAR file.
 
+## When you start Tomcat, it 'expands' the `survey.war` file
 
-## Make sure you "Run" the site so it expands..
+This WAR file contains all the content, JSP, Class - and the Java source files.
+
+A helper script allows you build `*.java` source files, then build, then restart tomcat.
+
+```
+./buildJava.sh
+./tomcat/bin/catalina.sh stop
+./tomcat/bin/cataling.sh start
+```
+
+## To view the website
 
 1. Choose "preview" from C9.io interface
 2. Preview Running application
@@ -55,21 +63,6 @@ requested, Tomcat extracts the WAR file.
 ![img3](./img/3.png)
 
 ![img4](./img/4.png)
-
-
-
-
-## once the site is run, Tomcat 'expands' the `survey.war` file
-
-This WAR file contains all the content, JSP, Class - and the Java source files.
-
-A helper script allows you build `*.java` source files, then build, then restart tomcat.
-
-```
-./buildJava.sh
-./tomcat/bin/catalina.sh stop
-./tomcat/bin/cataling.sh start
-```
 
 # Important - Update the UserName Password
 
@@ -91,10 +84,9 @@ Recompile, then restart Tomcat...
 ```bash
 ./buildJava.sh
 ./tomcat/bin/catalina.sh stop
-./tomcat/bin/cataling.sh start
+./tomcat/bin/catalina.sh start
 ```
 
+Note: JSP file changes are immediately reprocessed and reflected within Tomcat.
 
-Note: JSP files if changes are immediately reprocessed and reflected within Tomcat.
-Class files, sourced from Java files, requires a "restart" of Tomcat - that is what the `./tomcat/bin/cataling stop/start` provides.
-
+Class files, sourced from Java files, requires a "restart" of Tomcat - that is what the `./tomcat/bin/catalina.sh stop/start` provides.
