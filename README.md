@@ -37,7 +37,19 @@ Run the following from your `~/workspace/tomcat-mysql-c9` directory.
 
 Once the Tomcat script is run, the `survey.war` file is deployed to `./tomcat/webapps` and as the Survey site is requested, Tomcat extracts the WAR file.
 
-## Make sure you "Run" the site so it expands..
+## When you start Tomcat, it 'expands' the `survey.war` file
+
+This WAR file contains all the content, JSP, Class - and the Java source files.
+
+A helper script allows you build `*.java` source files, then build, then restart tomcat.
+
+```
+./buildJava.sh
+./tomcat/bin/catalina.sh stop
+./tomcat/bin/cataling.sh start
+```
+
+## To view the website
 
 1. Choose "preview" from C9.io interface
 2. Preview Running application
@@ -51,18 +63,6 @@ Once the Tomcat script is run, the `survey.war` file is deployed to `./tomcat/we
 ![img3](./img/3.png)
 
 ![img4](./img/4.png)
-
-## once the site is run, Tomcat 'expands' the `survey.war` file
-
-This WAR file contains all the content, JSP, Class - and the Java source files.
-
-A helper script allows you build `*.java` source files, then build, then restart tomcat.
-
-```
-./buildJava.sh
-./tomcat/bin/catalina.sh stop
-./tomcat/bin/cataling.sh start
-```
 
 # Important - Update the UserName Password
 
