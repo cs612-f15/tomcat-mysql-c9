@@ -35,8 +35,7 @@ Run the following from your `~/workspace/tomcat-mysql-c9` directory.
 
 ## Building Java classes
 
-Once the Tomcat script is run, the `survey.war` file is deployed to `./tomcat/webapps` and as the Survey site is 
-requested, Tomcat extracts the WAR file.
+Once the Tomcat script is run, the `survey.war` file is deployed to `./tomcat/webapps` and as the Survey site is requested, Tomcat extracts the WAR file.
 
 ## Make sure you "Run" the site so it expands..
 
@@ -89,4 +88,5 @@ Recompile, then restart Tomcat...
 ```
 
 Note: JSP file changes are immediately reprocessed and reflected within Tomcat.
+
 Class files, sourced from Java files, requires a "restart" of Tomcat - that is what the `./tomcat/bin/catalina.sh stop/start` provides.
